@@ -3,7 +3,7 @@ pipeline{
     stages{
     stage('version'){
     steps{
-    sh 'pyhon --version'
+    sh 'python --version'
     }
     }
         stage('run cv'){
