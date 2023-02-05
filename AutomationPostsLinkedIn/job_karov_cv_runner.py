@@ -11,6 +11,7 @@
 # -- Version                                  | 4.6.0
 # -- Description                              | # Automatically sends CV by cv_runner #
 # ------------------------------------------------------------------------------------------------
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
