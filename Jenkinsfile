@@ -3,12 +3,12 @@ pipeline{
     stages{
     stage('version'){
     steps{
-    sh 'python --version'
+    sh 'python3 --version'
     }
     }
         stage('run cv'){
           steps{
-            sh 'python job_karov_cv_runner.py'
+            sh 'python3 job_karov_cv_runner.py'
           }
         }
     }
