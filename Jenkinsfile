@@ -8,7 +8,7 @@ pipeline{
     }
         stage('run cv'){
           steps{
-            sh 'python3 job_karov_cv_runner.py'
+            sh 'python3 AutomationPostsLinkedIn/job_karov_cv_runner.py'
           }
         }
     }
