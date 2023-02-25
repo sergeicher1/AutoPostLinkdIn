@@ -11,6 +11,7 @@
 # -- Version                                  | 4.6.0
 # -- Description                              | # Automatically sends CV by cv_runner #
 # ------------------------------------------------------------------------------------------------
+from datetime import datetime
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
@@ -83,6 +84,7 @@ def UpdateJobs():
     driver.find_element(By.XPATH, "//input[@value='2191']").click()
     action.move_to_element(driver.find_element(By.XPATH, "//span[text()='סגור']")).click().perform()
     sleep(1)
+
 
 def OpenFields():
     # Open fields
@@ -221,12 +223,18 @@ def FourthExecution():
     sleep(5)
 
 
-#  flow of send CV automation
+#  WORKING flow of send CV automation
 if __name__ == '__main__':
+    try:
+        StartBrowser()
+        FirstExecution()
+        SecondExecution()
+        ThirdExecution()
+        FourthExecution()
+        CloseBrowser()
+        print("CV send status is: OK! ")
+    except Exception as e:
+        print("The exception message is: ", e)
+        driver.get_screenshot_as_file("Error" + str(datetime.now().strftime("%d.%m.%y %a %H-%M-%S")) + ".png")
 
-    StartBrowser()
-    FirstExecution()
-    SecondExecution()
-    ThirdExecution()
-    FourthExecution()
-    CloseBrowser()
+    # TODO: Make video
